@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane id="loginImage" prefHeight="1000.0" prefWidth="1500.0" style="-fx-background-color: #f8f7f9;">
+         <children>
+            <Pane layoutX="233.0" layoutY="167.0" prefHeight="670.0" prefWidth="1015.0" style="-fx-background-color: #fff; -fx-background-radius: 10px;">
+               <children>
+                  <ImageView id="loginImage" fitHeight="693.0" fitWidth="538.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/login.png" />
+                     </image></ImageView>
+                  <Label layoutX="623.0" layoutY="56.0" prefHeight="74.0" prefWidth="276.0" text="Login">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="44.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="623.0" layoutY="220.0" prefHeight="25.0" prefWidth="265.0" />
+                  <Label alignment="TOP_LEFT" layoutX="623.0" layoutY="139.0" prefHeight="62.0" prefWidth="276.0" text="Welcome back! Please login to your account" textFill="#000000ad">
+                     <font>
+                        <Font name="Leelawadee UI" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="623.0" layoutY="180.0" prefHeight="42.0" prefWidth="113.0" style="-fx-focus-traversable: transparent;" text="User name" textFill="#000000ad">
+                     <font>
+                        <Font name="Leelawadee UI" size="15.0" />
+                     </font></Label>
+                  <Label layoutX="623.0" layoutY="253.0" prefHeight="42.0" prefWidth="97.0" text="Email" textFill="#000000ad">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="623.0" layoutY="295.0" prefHeight="25.0" prefWidth="265.0" />
+                  <Label layoutX="623.0" layoutY="335.0" prefHeight="42.0" prefWidth="97.0" text="Password" textFill="#000000ad">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="623.0" layoutY="377.0" prefHeight="25.0" prefWidth="265.0" />
+                  <RadioButton layoutX="623.0" layoutY="423.0" mnemonicParsing="false" text="Remember me" />
+                  <Label layoutX="791.0" layoutY="423.0" prefHeight="17.0" prefWidth="97.0" text="Forgot password?" textFill="#000000ad">
+                     <font>
+                        <Font name="Leelawadee UI" size="12.0" />
+                     </font></Label>
+                  <Button layoutX="623.0" layoutY="485.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="265.0" style="-fx-background-color: #8752fe;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="622.0" layoutY="581.0" prefHeight="25.0" prefWidth="57.0" text="New user?" textFill="#000000ad">
+                     <font>
+                        <Font name="Leelawadee UI" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="680.0" layoutY="585.0" prefHeight="17.0" prefWidth="64.0" text="Signup" textFill="#8752fe" />
+               </children></Pane>
+         </children></Pane>
+   </children>
+</Pane>
