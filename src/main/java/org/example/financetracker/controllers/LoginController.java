@@ -1,4 +1,4 @@
-package org.example.financetracker;
+package org.example.financetracker.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
