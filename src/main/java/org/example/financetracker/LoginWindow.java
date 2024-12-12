@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.example.financetracker.users.Admin;
+import org.example.financetracker.users.User;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -24,5 +26,7 @@ public class LoginWindow extends Application {
 
     public static void main(String[] args) {
         launch();
+        User user = new User("dfads","sdsad","dsadsa");
+        User admin = new Admin("dfafewfweds","sfewfewdsad","dsadsrewsrewa");
     }
 }
