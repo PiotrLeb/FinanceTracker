@@ -21,7 +21,6 @@ public class LoginWindow extends Application {
         stage.setTitle("Finance Tracker");
         stage.setScene(scene);
         stage.setResizable(false);
-//        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
 
