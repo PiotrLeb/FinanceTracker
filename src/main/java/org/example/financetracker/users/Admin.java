@@ -5,17 +5,14 @@ public class Admin extends User {
         super(username, password, email);
     }
 
-    @Override
     public String getUsername() {
         return username;
     }
 
-    @Override
     public String getPassword() {
         return password;
     }
 
-    @Override
     public String getEmail() {
         return email;
     }
