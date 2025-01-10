@@ -21,7 +21,10 @@ public class LoginController {
     @FXML
     private Button submitButton;
 
-
+    /**
+     *
+     * @return
+     */
     private Alert initializeAlert(){
         Alert formAlert = new Alert(Alert.AlertType.ERROR);
         formAlert.setTitle("Error");

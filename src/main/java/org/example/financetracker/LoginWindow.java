@@ -12,6 +12,11 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class LoginWindow extends Application {
+    /**
+     *
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginWindow.class.getResource("/view/login-view.fxml"));
@@ -24,6 +29,10 @@ public class LoginWindow extends Application {
         stage.show();
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
         User user = new User("dfads","sdsad","dsadsa");
