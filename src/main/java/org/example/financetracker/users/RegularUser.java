@@ -10,28 +10,4 @@ public class RegularUser extends User {
     public RegularUser(String username, String password, String email) {
         super(username, password, email);
     }
-
-    /**
-     *
-     * @return
-     */
-    public String getUsername() {
-        return username;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String getEmail() {
-        return email;
-    }
 }
