@@ -46,7 +46,7 @@
                      <font>
                         <Font name="Leelawadee UI" size="12.0" />
                      </font></Label>
-                  <Button fx:id="submitButton" layoutX="623.0" layoutY="485.0" mnemonicParsing="false" onAction="#onSubmitButtonClickEmpty" prefHeight="49.0" prefWidth="265.0" style="-fx-background-color: #8752fe;" text="Login" textFill="WHITE">
+                  <Button fx:id="submitButton" layoutX="623.0" layoutY="485.0" mnemonicParsing="false" onAction="#onSubmitButtonClickCheck" prefHeight="49.0" prefWidth="265.0" style="-fx-background-color: #8752fe;" text="Login" textFill="WHITE">
                      <font>
                         <Font name="Leelawadee UI Bold" size="15.0" />
                      </font>

@@ -57,16 +57,21 @@ public class LoginController {
         formAlert.setHeaderText("Please fill the form");
         return formAlert;
     }
+    @FXML
+    protected void onSubmitButtonClickCheck() {
+        onSubmitButtonClickEmpty();
+        onSubmitButtonClickIncorrect();
+    }
 
     @FXML
-    protected void onSubmitButtonClickEmpty() {
+    private void onSubmitButtonClickEmpty() {
         if(usernameField.getText().isEmpty() || emailField.getText().isEmpty() || passwordField.getText().isEmpty()) {
             initializeAlert().showAndWait();
         }
 
     }
-
-    public void onSubmitButtonClickIncorrect() {
+    @FXML
+    private void onSubmitButtonClickIncorrect() {
         if (!usernameField.getText().equals(username) || !passwordField.getText().equals(password)){
             initializeAlert().showAndWait();
         }
