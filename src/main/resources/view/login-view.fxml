@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.financetracker.controllers.LoginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.financetracker.controllers.LoginController">
    <children>
       <Pane id="loginImage" prefHeight="1000.0" prefWidth="1500.0" style="-fx-background-color: #f8f7f9;">
          <children>
@@ -46,7 +46,7 @@
                      <font>
                         <Font name="Leelawadee UI" size="12.0" />
                      </font></Label>
-                  <Button fx:id="submitButton" layoutX="623.0" layoutY="485.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="265.0" style="-fx-background-color: #8752fe;" text="Login" textFill="WHITE" onAction="#onSubmitButtonClick">
+                  <Button fx:id="submitButton" layoutX="623.0" layoutY="485.0" mnemonicParsing="false" onAction="#onSubmitButtonClickEmpty" prefHeight="49.0" prefWidth="265.0" style="-fx-background-color: #8752fe;" text="Login" textFill="WHITE">
                      <font>
                         <Font name="Leelawadee UI Bold" size="15.0" />
                      </font>
@@ -56,7 +56,7 @@
                         <Font name="Leelawadee UI" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="680.0" layoutY="585.0" prefHeight="17.0" prefWidth="64.0" text="Signup" textFill="#8752fe" />
+                  <Label layoutX="680.0" layoutY="585.0" prefHeight="17.0" prefWidth="64.0" text="Sign up" textFill="#8752fe" />
                   <CheckBox fx:id="rememberCheckBox" layoutX="622.0" layoutY="423.0" mnemonicParsing="false" text="Remember me">
                      <font>
                         <Font name="Leelawadee UI" size="12.0" />

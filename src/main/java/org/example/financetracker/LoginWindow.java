@@ -20,7 +20,7 @@ public class LoginWindow extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(LoginWindow.class.getResource("/view/login-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1500, 1000);
+        Scene scene = new Scene(fxmlLoader.load(), 1300, 900);
         String css = Objects.requireNonNull(this.getClass().getResource("/css/login.css")).toExternalForm();
         scene.getStylesheets().add(css);
         stage.setTitle("Finance Tracker");
@@ -35,7 +35,7 @@ public class LoginWindow extends Application {
      */
     public static void main(String[] args) {
         launch();
-        User user = new User("dfads","sdsad","dsadsa");
-        User admin = new Admin("dfafewfweds","sfewfewdsad","dsadsrewsrewa");
+        User user = new User("username","password","email");
+        User admin = new Admin("1","2","3");
     }
 }
