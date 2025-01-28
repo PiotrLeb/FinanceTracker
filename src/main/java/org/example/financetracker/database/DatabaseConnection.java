@@ -3,10 +3,22 @@ package org.example.financetracker.database;
 import java.sql.*;
 
 public class DatabaseConnection {
-    public static void connection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/financedb";
-        String user = "root";
-        String password = "";
-        Connection conn = DriverManager.getConnection(url,user,password);
+
+    public String url = "jdbc:mysql://localhost:3306/financedb";
+    public String user = "root";
+    public String passcode = "";
+
+    public String result = "";
+
+    public void databaseAskQuery(String query) throws SQLException  {
+
+        Connection connection = DriverManager.getConnection(url, user, passcode);
+
+        Statement statement = connection.createStatement();
+
+        ResultSet resultSet = statement.executeQuery(query);
+
+        result = String.valueOf(resultSet);
+
     }
 }

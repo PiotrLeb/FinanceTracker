@@ -26,27 +26,6 @@ public class LoginController {
     private String username = null;
     private String password = null;
 
-    public void databaseConnect(){
-        String url = "jdbc:https://www.phpmyadmin.net/";
-        String user = "root";
-        String passcode = "";
-        String query = "SELECT username, password, FROM users";
-        try (
-                Connection connection = DriverManager.getConnection(url, user, passcode);
-
-                Statement statement = connection.createStatement();
-
-                ResultSet resultSet = statement.executeQuery(query);
-        ) {
-            while (resultSet.next()) {
-                username = resultSet.getString("username");
-                password = resultSet.getString("password");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
     /**
      *
      * @return
@@ -68,13 +47,12 @@ public class LoginController {
         if(usernameField.getText().isEmpty() || emailField.getText().isEmpty() || passwordField.getText().isEmpty()) {
             initializeAlert().showAndWait();
         }
-
     }
+    
     @FXML
     private void onSubmitButtonClickIncorrect() {
         if (!usernameField.getText().equals(username) || !passwordField.getText().equals(password)){
             initializeAlert().showAndWait();
         }
     }
-
 }
