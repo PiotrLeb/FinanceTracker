@@ -4,12 +4,15 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.financetracker.database.DatabaseConnection;
 import org.example.financetracker.users.Admin;
 import org.example.financetracker.users.User;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class LoginWindow extends Application {
+    static DatabaseConnection connDb = new DatabaseConnection();
     /**
      *
      * @param stage
@@ -35,5 +38,10 @@ public class LoginWindow extends Application {
         launch();
         User user = new User("username","password","email");
         User admin = new Admin("1","2","3");
+        try {
+            connDb.databaseAskQuery("SELECT * FROM users;");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
