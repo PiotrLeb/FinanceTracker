@@ -10,16 +10,25 @@ public class PasswordEncrypter {
     /**
      *
      * @param password
-     * @throws NoSuchAlgorithmException
      */
-    public static String encryptPassword(String password) throws NoSuchAlgorithmException {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            SecureRandom random = new SecureRandom();
-            byte[] salt = new byte[16];
-            random.nextBytes(salt);
-            md.update(salt);
-            byte[] hashedPassword = md.digest(password.getBytes());
-            return Base64.getEncoder().encodeToString(hashedPassword);
-    }
+    public static String encryptPassword(String password) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
 
+            byte[] hashedBytes = digest.digest(password.getBytes());
+
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hashedBytes) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error hashing password", e);
+        }
+    }
 }

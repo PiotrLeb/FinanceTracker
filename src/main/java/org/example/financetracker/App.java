@@ -34,7 +34,7 @@ public class App extends Application {
      */
     public static void main(String[] args) {
         launch();
-        User user = new User("dfads","sdsad","dsadsa");
-        User admin = new Admin("dfafewfweds","sfewfewdsad","dsadsrewsrewa");
+        User user = new User("dfads","sdsad");
+        User admin = new Admin("dfafewfweds","sfewfewdsad");
     }
 }
