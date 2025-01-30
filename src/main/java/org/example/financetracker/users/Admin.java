@@ -5,10 +5,9 @@ public class Admin extends User {
      *
      * @param username
      * @param password
-     * @param email
      */
-    public Admin(String username, String password, String email) {
-        super(username, password, email);
+    public Admin(String username, String password) {
+        super(username, password);
     }
 
     /**
@@ -27,11 +26,4 @@ public class Admin extends User {
         return password;
     }
 
-    /**
-     *
-     * @return
-     */
-    public String getEmail() {
-        return email;
-    }
 }
