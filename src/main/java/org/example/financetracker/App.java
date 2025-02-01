@@ -4,11 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.example.financetracker.users.Admin;
-import org.example.financetracker.users.User;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class App extends Application {
     /**
@@ -20,8 +17,6 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/view/login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1500, 1000);
-        String css = Objects.requireNonNull(this.getClass().getResource("/css/login.css")).toExternalForm();
-        scene.getStylesheets().add(css);
         stage.setTitle("Finance Tracker");
         stage.setScene(scene);
         stage.setResizable(false);
@@ -34,7 +29,5 @@ public class App extends Application {
      */
     public static void main(String[] args) {
         launch();
-        User user = new User("dfads","sdsad");
-        User admin = new Admin("dfafewfweds","sfewfewdsad");
     }
 }
