@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" style="-fx-background-color: #003459" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="536.0" layoutY="207.0" prefHeight="586.0" prefWidth="428.0" styleClass="form-pane">
+         <children>
+            <Label style="-fx-text-fill: #fff" layoutX="27.0" layoutY="14.0" prefHeight="60.0" prefWidth="165.0" text="Log in" />
+         </children></Pane>
+   </children>
+</Pane>
