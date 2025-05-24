@@ -34,6 +34,22 @@ public class User {
         }
     }
 
+    public static void insertUser(String username, String password) throws SQLException {
+        try (Connection conn = DatabaseConnector.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO users (username, password) VALUES(?, ?)");
+            ps.setString(1, username);
+            ps.setString(2, password);
+            int rowsAffected = ps.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println(rowsAffected + " rows affected");
+            } else {
+                System.out.println("No rows affected");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static boolean isUserExist(String username, String password) throws SQLException {
         try (Connection conn = DatabaseConnector.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("SELECT username FROM users WHERE username = ? AND password = ?");
@@ -48,6 +64,21 @@ public class User {
             return false;
         }
     }
+
+    public static boolean isUsernameExist(String username) throws SQLException {
+        try (Connection conn = DatabaseConnector.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("SELECT username FROM users WHERE username = ?");
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                if (rs.getString("username").equals(username)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
     public String getUsername() {
         return username;
     }
