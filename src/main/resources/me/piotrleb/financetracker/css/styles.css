@@ -3,12 +3,39 @@
     src: url(../fonts/LexendDeca-Regular.ttf);
 }
 
-.form-pane {
+* {
     -fx-font-family: 'Lexend Deca';
+}
+
+Label {
+    -fx-text-fill: #fff;
+}
+
+Button {
+    -fx-background-radius: 30px;
+    -fx-background-color: #00A7E1;
+}
+
+.form-pane {
     -fx-background-color: #00171f;
     -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.5, 5, 5);
+}
+
+#loginLabel {
     -fx-font-size: 30px;
 }
 
+.switch-button {
+    -fx-text-fill: #fff;
+}
 
+.input {
+    -fx-background-radius: 30px;
+    -fx-padding: 0 0 0 15px;
+}
 
+#signIn {
+    -fx-font-size: 25px;
+    -fx-text-fill: #fff;
+}
