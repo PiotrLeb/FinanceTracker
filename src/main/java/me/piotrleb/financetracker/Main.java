@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -18,19 +19,24 @@ public class Main extends Application {
         Main.stage = stage;
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/login.fxml")));
         Scene scene = new Scene(root, 1500, 1000);
-        Font.loadFont(Objects.requireNonNull(getClass().getResource("/me/piotrleb/financetracker/fonts/LexendDeca-Regular.ttf")).toExternalForm(), 10);
+        Font.loadFont(Objects.requireNonNull(getClass().getResource("/me/piotrleb/financetracker/fonts/LexendDeca-Regular.ttf")).toExternalForm(), 20);
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("css/main.css")).toExternalForm());
         stage.setTitle("Finance Tracker");
         stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
 
     public static void setRoot(String fxml) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource(fxml)));
         Scene scene = new Scene(root, 1500, 1000);
-        Font.loadFont(Objects.requireNonNull(Main.class.getResource("/me/piotrleb/financetracker/fonts/LexendDeca-Regular.ttf")).toExternalForm(), 10);
+        Font.loadFont(Objects.requireNonNull(Main.class.getResource("/me/piotrleb/financetracker/fonts/LexendDeca-Regular.ttf")).toExternalForm(), 20);
         scene.getStylesheets().add(Objects.requireNonNull(Main.class.getResource("css/main.css")).toExternalForm());
         stage.setScene(scene);
+    }
+
+    public static Stage getStage() {
+        return stage;
     }
 
     public static void main(String[] args) {

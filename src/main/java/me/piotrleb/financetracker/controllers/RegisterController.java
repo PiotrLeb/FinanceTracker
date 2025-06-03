@@ -4,18 +4,38 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import me.piotrleb.financetracker.Main;
 import me.piotrleb.financetracker.users.User;
 import me.piotrleb.financetracker.utils.UserPasser;
 
 
 public class RegisterController {
+    private double xOffset = 0;
+    private double yOffset = 0;
+    private Stage primaryStage = Main.getStage();
+    @FXML
+    private Pane topBar;
     @FXML
     private TextField textField;
     @FXML
     private PasswordField passwordField;
     @FXML
     private PasswordField repeatPasswordField;
+
+    @FXML
+    protected void initialize() {
+        topBar.setOnMousePressed(event -> {
+            xOffset = event.getSceneX();
+            yOffset = event.getSceneY();
+        });
+
+        topBar.setOnMouseDragged(event -> {
+            primaryStage.setX(event.getScreenX() - xOffset);
+            primaryStage.setY(event.getScreenY() - yOffset);
+        });
+    }
 
     private void usernameTaken() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -56,4 +76,12 @@ public class RegisterController {
         }
     }
 
+    @FXML
+    protected void exit(){
+        System.exit(0);
+    }
+
+    public void toLoginView() throws Exception {
+        Main.setRoot("views/login.fxml");
+    }
 }

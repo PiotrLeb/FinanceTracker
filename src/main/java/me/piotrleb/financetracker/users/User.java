@@ -16,7 +16,7 @@ public class User {
     private float savings;
     private float expenses;
 
-    public User(String username, String password) throws SQLException {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
         try (Connection conn = DatabaseConnector.getConnection()) {
@@ -34,7 +34,7 @@ public class User {
         }
     }
 
-    public static void insertUser(String username, String password) throws SQLException {
+    public static void insertUser(String username, String password) {
         try (Connection conn = DatabaseConnector.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO users (username, password) VALUES(?, ?)");
             ps.setString(1, username);
@@ -57,6 +57,7 @@ public class User {
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
+                System.out.println(rs.getString("username").equals(username));
                 if (rs.getString("username").equals(username)) {
                     return true;
                 }
@@ -81,9 +82,6 @@ public class User {
 
     public String getUsername() {
         return username;
-    }
-    public String getPassword() {
-        return password;
     }
     public float getBalance() {
         return balance;

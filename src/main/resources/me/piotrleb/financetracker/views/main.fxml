@@ -1,14 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import java.net.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="me.piotrleb.financetracker.controllers.MainController"
-            prefHeight="1000.0" prefWidth="1500.0">
-
-</AnchorPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1500.0" style="-fx-background-color: #000" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.piotrleb.financetracker.controllers.MainController">
+    <stylesheets>
+        <URL value="@../css/main.css" />
+    </stylesheets>
+    <children>
+        <Pane fx:id="topBar" prefHeight="35.0" prefWidth="1500.0" style="-fx-background-color: #000;">
+            <children>
+                <Label layoutY="2.0" prefHeight="31.0" prefWidth="201.0" style="-fx-font-size: 15; -fx-padding: 0 0 0 15" text="Finance Tracker" />
+                <ImageView fitHeight="20" fitWidth="20" layoutX="1469.0" layoutY="9.0">
+                    <image>
+                        <Image url="@../icons/cross32px.png" />
+                    </image>
+                </ImageView>
+                <Button layoutX="1455.0" mnemonicParsing="false" onAction="#exit" prefHeight="35.0" prefWidth="46.0" styleClass="exit-button" />
+            </children></Pane>
+      <Label fx:id="dashboardLabel" layoutX="107.0" layoutY="55.0" prefHeight="48.0" prefWidth="255.0" text="DASHBOARD" />
+      <Pane layoutY="43.0" prefHeight="957.0" prefWidth="80.0" style="-fx-background-color: #121212; -fx-background-radius: 0 10 10 0">
+         <children>
+             <Button layoutX="6.0" layoutY="81.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="60.0" styleClass="home-button">
+                 <graphic>
+                     <ImageView fitHeight="39.0" fitWidth="40.0">
+                         <image>
+                             <Image url="@../icons/home64px.png" />
+                         </image>
+                     </ImageView>
+                 </graphic>
+             </Button>
+         </children></Pane>
+<!--    balance pane    -->
+        <Pane layoutX="107.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color:#1DB954;" styleClass="tile">
+         <children>
+             <Pane layoutX="20.0" layoutY="21.0" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 100%; -fx-background-color: #179541">
+                 <children>
+                     <ImageView fitHeight="48" fitWidth="48" layoutX="16.0" layoutY="16.0" preserveRatio="true">
+                         <image>
+                             <Image url="@../icons/wallet-money64px.png" />
+                         </image>
+                     </ImageView>
+                 </children>
+             </Pane>
+            <Label layoutX="20.0" layoutY="107.0" prefHeight="35.0" prefWidth="108.0" styleClass="tile-label" text="Balance" />
+            <Label fx:id="balance" layoutX="20.0" layoutY="142.0" prefHeight="48.0" prefWidth="154.0" styleClass="tile-bottom-label" text="54324.32" />
+             <Button layoutX="174.0" layoutY="6.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="20.0" styleClass="tile-button" />
+               <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="174.0" layoutY="11.0">
+                   <image>
+                       <Image url="@../icons/menu-dots-vertical32px.png" />
+                   </image>
+               </ImageView>
+         </children>
+        </Pane>
+<!--    income pane    -->
+      <Pane layoutX="325.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" styleClass="tile">
+         <children>
+             <Pane layoutX="14.0" layoutY="20.0" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 100%; -fx-background-color: #272626">
+                 <children>
+                         <ImageView fitHeight="48" fitWidth="48" layoutX="16.0" layoutY="16.0" preserveRatio="true">
+                             <image>
+                                 <Image url="@../icons/money-income64px.png" />
+                             </image>
+                         </ImageView>
+                 </children>
+             </Pane>
+             <Button layoutX="174.0" layoutY="6.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="20.0" styleClass="tile-button" />
+             <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="174.0" layoutY="11.0">
+                 <image>
+                     <Image url="@../icons/menu-dots-vertical32px.png" />
+                 </image>
+             </ImageView>
+             <Label layoutX="20.0" layoutY="107.0" prefHeight="35.0" prefWidth="108.0" styleClass="tile-label" text="Income" />
+             <Label fx:id="income" layoutX="20.0" layoutY="142.0" prefHeight="48.0" prefWidth="154.0" styleClass="tile-bottom-label" text="12543.56" />
+         </children></Pane>
+<!--    savings pane    -->
+        <Pane layoutX="543.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" styleClass="tile">
+            <children>
+                <Pane layoutX="14.0" layoutY="20.0" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 100%; -fx-background-color: #272626">
+                    <children>
+                        <ImageView fitHeight="48" fitWidth="48" layoutX="16.0" layoutY="16.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../icons/piggy-bank64px.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+                <Button layoutX="174.0" layoutY="6.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="20.0" styleClass="tile-button" />
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="174.0" layoutY="11.0">
+                    <image>
+                        <Image url="@../icons/menu-dots-vertical32px.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="20.0" layoutY="107.0" prefHeight="35.0" prefWidth="108.0" styleClass="tile-label" text="Savings" />
+                <Label fx:id="savings" layoutX="20.0" layoutY="142.0" prefHeight="48.0" prefWidth="154.0" styleClass="tile-bottom-label" text="10000.00" />
+            </children>
+        </Pane>
+<!--    expenses pane    -->
+        <Pane layoutX="761.0" layoutY="125.0" prefHeight="200.0" prefWidth="200.0" styleClass="tile">
+            <children>
+                <Pane layoutX="14.0" layoutY="20.0" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 100%; -fx-background-color: #272626">
+                    <children>
+                        <ImageView fitHeight="48" fitWidth="48" layoutX="16.0" layoutY="14.0" preserveRatio="true">
+                            <image>
+                                <Image url="@../icons/expense-bill64px.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+                <Button layoutX="174.0" layoutY="6.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="20.0" styleClass="tile-button" />
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="174.0" layoutY="11.0">
+                    <image>
+                        <Image url="@../icons/menu-dots-vertical32px.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="20.0" layoutY="107.0" prefHeight="35.0" prefWidth="108.0" styleClass="tile-label" text="Expenses" />
+                <Label fx:id="expenses" layoutX="20.0" layoutY="142.0" prefHeight="48.0" prefWidth="154.0" styleClass="tile-bottom-label" text="2341.32" />
+            </children>
+        </Pane>
+      <Pane layoutX="107.0" layoutY="343.0" prefHeight="270.0" prefWidth="499.0" styleClass="tile" />
+      <Pane layoutX="624.0" layoutY="343.0" prefHeight="270.0" prefWidth="337.0" styleClass="tile" />
+      <Pane layoutX="107.0" layoutY="631.0" prefHeight="351.0" prefWidth="854.0" styleClass="tile" />
+    </children>
+</Pane>

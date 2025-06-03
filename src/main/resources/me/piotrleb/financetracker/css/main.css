@@ -13,7 +13,17 @@ Label {
 
 Button {
     -fx-background-radius: 30px;
-    -fx-background-color: #00A7E1;
+    -fx-background-color: #1DB954;
+}
+
+.exit-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-padding: 0;
+    -fx-text-fill: #fff;
+    -fx-background-radius: 0;
 }
 
 .form-pane {
@@ -36,6 +46,58 @@ Button {
 }
 
 #signIn {
-    -fx-font-size: 25px;
+    -fx-font-size: 22px;
     -fx-text-fill: #fff;
+}
+
+#signUp {
+    -fx-font-size: 22px;
+    -fx-text-fill: #fff;
+}
+
+.bottomButton {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-padding: 0;
+    -fx-text-fill: #1DB954;
+}
+
+.home-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.tile{
+    -fx-background-color: #121212;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 5, 5);
+}
+
+.tile-label {
+    -fx-text-fill: #fff;
+    -fx-font-size: 20px;
+}
+
+.tile-bottom-label {
+   -fx-font-size: 32px;
+}
+
+#dashboardLabel {
+    -fx-font-size: 30;
+    text-fill: #fff;
+}
+
+.chart {
+    -fx-background-color: #121212;
+    -fx-background-radius: 8px;
+}
+
+.tile-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-padding: 0;
 }
